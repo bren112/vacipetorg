@@ -14,7 +14,7 @@ function Auth() {
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('user_data'));
         if (userData) {
-            window.location.href = '/meuspets'; // Redireciona se o usuário já estiver logado
+            window.location.href = '/pets'; // Redireciona se o usuário já estiver logado
         }
     }, []);
 

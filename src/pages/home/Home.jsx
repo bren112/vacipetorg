@@ -10,7 +10,7 @@ function Home() {
   <>
   <br/>
   <h1 id='title'>VACIPET</h1>
-
+<p>foi</p>
   
   </>
   );
