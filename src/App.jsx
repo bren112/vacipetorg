@@ -4,7 +4,6 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home/Home";
 import Sobre from "./pages/sobre/Sobre";
 import Contatos from "./pages/contatos/Contatos";
-import Footer from "./components/footer";
 import Saiba from "./pages/saibamais/Saiba";
 import Pets from "./pages/meuspets/Pets";
 import Loc from "./pages/localizacao/Localizacao";
