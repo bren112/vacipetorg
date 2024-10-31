@@ -8,7 +8,7 @@ import Betinho from './betinho.jpeg';
 import FredVieira from './fredvieira.jpeg';
 import Gelica from './gelica.jpeg';
 import Hana from './hana.jpeg';
-import Hanna from './hanna.jpeg';
+import Hanna from './Hanna.jpeg';
 import Shake from './shake.jpeg';
 import Tete from './tete.jpeg';
 import Mel from './mel.jpeg';
