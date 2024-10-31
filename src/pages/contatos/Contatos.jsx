@@ -42,9 +42,9 @@ function Contatos() {
             
           </div>
           <div className="right-side">
-            <div className="topic-text">Envie sua Notícia para a gente!</div>
+            <div className="topic-text">Ssaúde do seu Pet com a gente!</div>
             <br />
-            <p>Fique por dentro dos acontecimentos! Se você tem alguma notícia para compartilhar ou deseja reportar algum evento, entre em contato conosco. Estamos aqui para ouvir e informar. Sua contribuição é fundamental para mantermos todos atualizados. Não hesite em nos contatar!</p>
+            <p>Não Perca a data da vacina do seu Pet!  Se tiver alguma dúvida entre em contato e saiba Mais </p>
             
           </div>
         </div>
