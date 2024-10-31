@@ -10,7 +10,7 @@ import Gelica from './gelica.jpeg';
 import Hana from './hana.jpeg';
 import Hanna from './Hanna.jpeg';
 import Shake from './shake.jpeg';
-import Tete from './tete.jpeg';
+import Tete from './Tete.jpeg';
 import Mel from './mel.jpeg';
 import teste from './sobre.png';
 // import banner from './banner.jpeg';
