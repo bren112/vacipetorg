@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'; 
 import { supabase } from "../../supabase/supabase.js";
 import './pet.css'; 
+import { Link } from 'react-router-dom';
 
 function CreatePet() {
     const [nome, setNome] = useState('');
@@ -115,8 +116,15 @@ function CreatePet() {
                 </div>
             )}
             <br/>
+
+       
+            <br/>
             <div className="form-wrapper">
                 <h1>Criar Meu Pet</h1>
+                <Link to='/meuspets'>
+                <button id='mp'>Já Tenho!</button>
+                </Link>
+                
                 <form className="pet-form" onSubmit={handleSubmit}>
                     <div className={`step-container step-${step}`}>
                         {step === 0 && (

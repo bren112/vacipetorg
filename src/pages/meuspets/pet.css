@@ -22,6 +22,7 @@
 .welcome-container {
    display: flex;
    justify-content: space-around;
+   flex-direction: row;
 }
 
 .logout-button {
@@ -160,4 +161,18 @@ button:hover {
 button:disabled {
     background-color: #ccc; /* Cor para botões desativados */
     cursor: not-allowed;
+}
+#mp{
+    width: 10pc;
+   background-color: rgb(231, 231, 231);
+   color:orange;
+   font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+    .welcome-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1pc;
+     }
 }

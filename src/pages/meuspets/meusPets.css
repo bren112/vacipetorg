@@ -127,7 +127,7 @@ textarea {
 
 button {
     padding: 10px 15px;
-    background-color: #c59c17;
+    background-color: orange;
     color: white;
     border: none;
     border-radius: 5px;
@@ -148,7 +148,7 @@ button:hover {
 }
 .header h3{
     font-size: 3pc;
-    color: rgb(255, 193, 37);
+    color:  orange;
     font-weight: 800;
 }
 .tabela-vacinas {
@@ -165,7 +165,7 @@ button:hover {
 }
 
 .tabela-vacinas th {
-    background-color: #dab33d;
+    background-color: orange;
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
@@ -190,8 +190,11 @@ button:hover {
     }
 }
 #marcar{
-    background-color: rgb(214, 167, 64);
+    background-color: orange;
     width: 18pc;
+}
+#marcar:hover{
+    background-color: #d69e25;
 }
 #table{
     background-color: #33333300;

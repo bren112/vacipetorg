@@ -1,79 +1,112 @@
-#banner {
-  width: 42%;
-  max-width: 600px;
-  height: auto;
-  margin-bottom: 20px;
+.membros img{
+    width: 10pc;
+}
+.container_sobre{
+  display: flex;
+  gap: 1pc;
+  margin: 2pc;
+ 
 }
 
-.centro {
+.sobre{
+
+}
+.projeto{
+  background-color: orange;
+  text-align: center;
+}
+#title_sobre{
+  font-size: 4pc;
+  font-weight: 600;
+}
+#txt{
+  max-width: 60pc;
+text-align: justify;
+font-size: 1.6pc;
+}
+.centro{
+  display: flex;
+  justify-content: center;
+}
+.card{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+ background-color: aliceblue;
+ border-radius: 1pc;
+ margin: 1pc;
+
+}
+.card h2{
+  max-width: 37pc;
+  text-align: justify;
+  margin: 2pc;
+}
+.card img{
+width: 10pc;
+height: 13pc;
+height: auto;
+}
+.card h1{
+  color: orange;
+  font-size: 2pc;
+  font-weight: 700;
+}
+.pjt{
+  background-color: orange;
+}
+.membros{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1pc;
+  margin: 1pc;
+  width: 25pc 
 }
-
-.accordions {
-  margin: 20px;
-  width: 100%;
-  max-width: 800px;
+.membros img{
+  width: 10pc;
+  border-radius: 1pc;
+  margin-top: 5px;
 }
-
-.accordion {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-  font-size: 1rem;
+.membros h2{
+  font-size: 1pc;
+ 
 }
-
-.accordion-header {
-  background-color: #BFBFBF;
-  padding: 10px;
-  cursor: pointer;
+.todos{
+  background-color: rgb(240, 188, 45);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cards{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: auto;
-  font-size: 1rem;
-  border-radius: 5px;
+  justify-content: center;
 }
-
-.accordion-content {
-  padding: 10px;
-  border-top: 1px solid #ddd;
-  background-color: #fff;
-}
-
-.accordion-header span {
-  font-size: 1.5rem;
-}
-
-#map-container {
-  width: 100%;
-  height: 400px;
-  max-width: 800px;
-}
-
-@media (max-width: 768px) {
-  .accordion {
-    width: 100%;
-  }
+.filho42{
+  display: flex;
+  justify-content: center;
   
-  .accordion-header {
-    font-size: 0.9rem;
-  }
-  
-  #map-container {
-    height: 300px;
-  }
 }
-
-@media (max-width: 480px) {
-  .accordion-header {
-    font-size: 0.8rem;
+@media screen and (max-width: 768px) {
+  .container_sobre{
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    margin: 2pc;
+   
   }
-  
-  #map-container {
-    height: 250px;
-  }
+  .filho42 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#txt {
+  max-width: 60pc;
+  text-align: justify;
+  font-size: 1pc;
+  margin: 1pc;
+}
 }
