@@ -42,7 +42,7 @@ function Contatos() {
             
           </div>
           <div className="right-side">
-            <div className="topic-text">Ssaúde do seu Pet com a gente!</div>
+            <div className="topic-text">Saúde do seu Pet com a gente!</div>
             <br />
             <p>Não Perca a data da vacina do seu Pet!  Se tiver alguma dúvida entre em contato e saiba Mais </p>
             

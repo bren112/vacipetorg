@@ -30,7 +30,11 @@ Mantenha a carteira de vacinação do seu pet sempre atualizada.
 Nunca administre vacinas sem orientação de um veterinário.
 Evite passeios em locais públicos com filhotes não vacinados.
 Realize os reforços vacinais conforme recomendado.</h2>
+
             </div>
+            <br />
+            <br />
+            <br />
 
         </div>
         </>

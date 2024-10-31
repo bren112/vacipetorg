@@ -30,6 +30,7 @@ function Navbar() {
             <ul className={active}>
                 <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
                 <li className="nav__item"><Link to="/sobre" className="nav__link">Sobre Nós</Link></li>
+                <li className="nav__item"><Link to="/saiba" className="nav__link">Saiba Mais</Link></li>
                 <li className="nav__item"><Link to="/contatos" className="nav__link">Contatos</Link></li>
                 <li className="nav__item"><Link to="/loc" className="nav__link">Localização</Link></li>
                 
