@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import { supabase } from "../../supabase/supabase.js";
 import './pet.css'; 
 import { Link } from 'react-router-dom';
@@ -10,10 +10,10 @@ function CreatePet() {
     const [sexo, setSexo] = useState(''); 
     const [dataNascimento, setDataNascimento] = useState('');
     const [restricoes, setRestricoes] = useState('');
-    const [imagem, setImagem] = useState('');
+    const [imagem, setImagem] = useState(null); // Armazena o arquivo
     const [numeroUsuario, setNumeroUsuario] = useState(null);
     const [usuarioLogado, setUsuarioLogado] = useState(null);
-    const [step, setStep] = useState(0); // Novo estado para controlar os passos
+    const [step, setStep] = useState(0);
 
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('user_data')); 
@@ -42,6 +42,30 @@ function CreatePet() {
         window.location.href = '/'; 
     };
 
+    const uploadImage = async () => {
+        if (!imagem) {
+            alert("Por favor, selecione uma imagem.");
+            return null;
+        }
+
+        const fileName = `${Date.now()}_${imagem.name}`;
+        const { data, error } = await supabase.storage
+            .from('img_pet')
+            .upload(fileName, imagem);
+
+        if (error) {
+            console.error("Erro ao fazer upload da imagem:", error);
+            alert("Erro ao fazer upload da imagem.");
+            return null;
+        }
+
+        const { data: publicUrlData } = supabase.storage
+            .from('img_pet')
+            .getPublicUrl(fileName);
+
+        return publicUrlData.publicUrl;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -50,9 +74,13 @@ function CreatePet() {
             return;
         }
 
+        const imageUrl = await uploadImage();
+
+        if (!imageUrl) return;
+
         const { error } = await supabase
             .from('meu_pet')
-            .insert([ 
+            .insert([
                 { 
                     nome, 
                     tipo, 
@@ -60,7 +88,7 @@ function CreatePet() {
                     sexo, 
                     data_nascimento: dataNascimento, 
                     restricoes, 
-                    imagem,
+                    imagem: imageUrl,
                     nmr_user: numeroUsuario 
                 }
             ]);
@@ -74,14 +102,13 @@ function CreatePet() {
             setSexo(''); 
             setDataNascimento('');
             setRestricoes('');
-            setImagem('');
+            setImagem(null);
             alert('Pet criado com sucesso!');
         }
     };
 
-    const handleNext = (e) => { // Adicione 'e' como argumento
-        e.preventDefault(); // Adicione essa linha
-        // Verificação de campos obrigatórios
+    const handleNext = (e) => {
+        e.preventDefault();
         if ((step === 0 && !nome) || 
             (step === 1 && !tipo) || 
             (step === 2 && !raca) || 
@@ -95,7 +122,7 @@ function CreatePet() {
         if (step < 5) {
             setStep(step + 1);
         } else {
-            handleSubmit(e); // Chama a função de submit se estiver no último passo
+            handleSubmit(e);
         }
     };
 
@@ -107,8 +134,8 @@ function CreatePet() {
 
     return (
         <>
-        <br/>
-        <br/>
+            <br/>
+            <br/>
             {usuarioLogado && (
                 <div className="welcome-container">
                     <h2 id='welcome'>Bem-vindo, <span id='span'>{usuarioLogado}!</span></h2>
@@ -117,12 +144,10 @@ function CreatePet() {
             )}
             <br/>
 
-       
-            <br/>
             <div className="form-wrapper">
                 <h1>Criar Meu Pet</h1>
                 <Link to='/meuspets'>
-                <button id='mp'>Já Tenho!</button>
+                    <button id='mp'>Já Tenho!</button>
                 </Link>
                 
                 <form className="pet-form" onSubmit={handleSubmit}>
@@ -195,11 +220,12 @@ function CreatePet() {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label>Imagem URL:</label>
+                                    <label>Imagem:</label>
                                     <input 
-                                        type="text" 
-                                        value={imagem} 
-                                        onChange={(e) => setImagem(e.target.value)} 
+                                        type="file" 
+                                        accept="image/*"
+                                        onChange={(e) => setImagem(e.target.files[0])} 
+                                        required 
                                     />
                                 </div>
                             </>
@@ -219,3 +245,4 @@ function CreatePet() {
 }
 
 export default CreatePet;
+ 
