@@ -5,7 +5,8 @@
   display: flex;
   justify-content: center;
   background-color: orange;
-  gap: 2pc;
+  gap: 5pc;
+  height: 35pc;
  }
 #desktop{
   font-family: 'Rancho', cursive;

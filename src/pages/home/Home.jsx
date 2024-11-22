@@ -10,25 +10,24 @@ function Home() {
 
   return (
   <>
-  <br/>
-  <div className='container_home'>
+  <br />
+      <div className='container_home'>
 
-     <div className="texto">
-      <h1 id='desktop' className='pulsing'>Cuidando da saúde do seu pet com carinho!</h1>
-      <h1 id='mobile'  className='pulsing'>Cuidando da saúde do seu pet com carinho!</h1>
+        <div className="texto">
+          <br />
+          <br />
+          <br />
+          <h1 id='desktop' className='pulsing'>Cuidando da saúde do seu pet com carinho!</h1>
+          <h1 id='mobile'  className='pulsing'>Cuidando da saúde do seu pet com carinho!</h1>
 
       </div>
       <div id=''>
-      <img src={Gato} id='imgdesktop' />
-      <img src={Gato} id='imgmobile' />
+        <img src={Gato} id='imgdesktop' />
+        <img src={Gato} id='imgmobile' />
 
       </div>
 
-      </div>
-
-<Link to='/login'>
-  <button id='mais'>Logar</button>
-  </Link>
+ </div>
 
   
   </>

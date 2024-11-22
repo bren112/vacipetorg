@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'; 
 import { supabase } from "../../supabase/supabase.js";
+import { Link } from 'react-router-dom';
 import './meusPets.css';
+import Editar from '../editar/Editar.jsx';
 
 function MeusPets() {
     const [pets, setPets] = useState([]);
@@ -137,6 +139,28 @@ function MeusPets() {
             console.error('Erro ao atualizar o status da vacina:', error);
         }
     };
+    const excluirPet = async (petId) => {
+        try {
+            const { error } = await supabase
+                .from('meu_pet')
+                .delete()
+                .eq('id', petId);
+    
+            if (error) {
+                console.error('Erro ao excluir o pet:', error);
+            } else {
+                alert('Pet excluído com sucesso!');
+                setPets(pets.filter(pet => pet.id !== petId)); // Atualiza a lista de pets
+            }
+        } catch (error) {
+            console.error('Erro ao tentar excluir o pet:', error);
+        }
+    };
+
+    const ir = async()=> {
+        window.location = "Filmes.html"
+    }
+    
     
     return (
         <div className="meus-pets-container">
@@ -166,8 +190,9 @@ function MeusPets() {
                                 </div>
                                 <div className="pet-details">
                                     <p>Raça: {pet.raca}</p>
+                                    <p>Tipo: {pet.tipo}</p>
                                     <p>Sexo: {pet.sexo}</p>
-                                    <p>Data de Nascimento: {pet.data_nascimento}</p>
+                                    <p>Restrições: {pet.restricoes}</p>
                                     <br/>
                                     <div className="centro">
                                         <button id='marcar' onClick={() => abrirModal(pet)}>Marcar Vacina <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
@@ -175,6 +200,14 @@ function MeusPets() {
                                             <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"/>
                                             <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z"/>
                                         </svg></button>
+                                        <button id="excluir" onClick={() => excluirPet(pet.id)}>
+    Excluir
+</button>
+                                    {/* Possível alteração */}{/*  <a href="editar.jsx">
+                                        <button id="editar">
+                                            Editar
+                                        </button>
+                                        </a> */ }
                                     </div>
                                 </div>
                             </li>
@@ -265,4 +298,4 @@ function MeusPets() {
     );
 }
 
-export default MeusPets; 
+export default MeusPets;

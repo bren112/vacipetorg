@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from "../../supabase/supabase.js";
 import './login.css';
+import { Link } from 'react-router-dom';
 
 function Auth() {
     const [email, setEmail] = useState('');
@@ -63,6 +64,8 @@ function Auth() {
         setDataNascimento('');
     };
 
+    
+
     return (
         <>
             <br />
@@ -88,13 +91,6 @@ function Auth() {
                         onChange={(e) => setEmail(e.target.value)} 
                         required 
                     />
-                    <label>Senha:</label>
-                    <input 
-                        type="password" 
-                        value={senha} 
-                        onChange={(e) => setSenha(e.target.value)} 
-                        required 
-                    />
                     {!isLoginMode && (
                         <>
                             <label>Telefone:</label>
@@ -111,7 +107,17 @@ function Auth() {
                             />
                         </>
                     )}
+                    <label>Senha:</label>
+                    <input 
+                        type="password" 
+                        value={senha} 
+                        onChange={(e) => setSenha(e.target.value)} 
+                        required 
+                    />
                     <button type="submit">{isLoginMode ? 'Entrar' : 'Criar Conta'}</button>
+                    <br />
+                   {/* Possível atualição */}
+                   {/* <a href="Esqueci.jxs">Esqueceu senha</a>*/}
                 </form>
                 <div className="switch-auth" onClick={toggleAuthMode}>
                     {isLoginMode ? 'Criar Conta' : 'Já tem uma conta? Faça login'}

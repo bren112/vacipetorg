@@ -26,7 +26,7 @@ font-size: 1.6pc;
 }
 .centro{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;  
 }
 .card{
  display: flex;
@@ -75,7 +75,7 @@ height: auto;
  
 }
 .todos{
-  background-color: rgb(240, 188, 45);
+  background-color: orange;
     display: flex;
     justify-content: center;
     flex-direction: column;

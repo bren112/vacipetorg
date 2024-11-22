@@ -134,6 +134,26 @@ button {
     cursor: pointer;
 }
 
+#editar{
+    padding: 10px 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90px; 
+}
+
+#excluir{
+    padding: 10px 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; 
+}
+
 button:hover {
     background-color: #d69e25;
 }
